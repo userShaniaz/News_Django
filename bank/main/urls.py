@@ -27,7 +27,7 @@ urlpatterns = [
     path('', views.CustomLoginView.as_view(), name='login'),  # Вход
     path('logout/', views.CustomLogoutView.as_view(), name='logout'),  # Выход
     path('register/', views.RegisterUserView.as_view(), name='register'),  # Регистрация
-    path('admin/', admin.site.urls),  # Админка
+    # path('admin/', admin.site.urls),  # Админка
     path('kabinet/<int:id>/', views.KabinetView.as_view(), name='kabinet'),  # Личный кабинет
     path('history_range/<int:id>/', views.HistoryRangeView.as_view(), name='history_range'),  # История транзакций
     path('show_all_users/<int:id>/', views.ShowAllUsersView.as_view(), name='show_all_users'),  # Показать всех пользователей
