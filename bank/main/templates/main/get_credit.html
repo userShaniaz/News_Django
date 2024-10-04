@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Получение кредита</title>
+</head>
+<body>
+    <h1>Получение кредита</h1>
+    <form action="{% url 'get_credit' %}" method="POST">
+        {% csrf_token %}
+        <label for="amount">Сумма кредита:</label>
+        <input id="amount" type="number" name="amount" step="0.01" required><br><br>
+
+        <label for="interest_rate">Процентная ставка (% в год):</label>
+        <input id="interest_rate" type="number" name="interest_rate" step="0.01" required><br><br>
+
+        <label for="duration">Срок (в месяцах):</label>
+        <input id="duration" type="number" name="duration" required><br><br>
+
+        <button type="submit">Оформить кредит</button>
+    </form>
+
+    {% if success %}
+        <p style="color: green;">{{ success }}</p>
+    {% endif %}
+</body>
+</html>

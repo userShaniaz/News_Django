@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Просмотр кредита</title>
+</head>
+<body>
+    <h1>Кредитные детали</h1>
+    <p>Сумма кредита: {{ credit.amount }}</p>
+    <p>Процентная ставка: {{ credit.interest_rate }}%</p>
+    <p>Срок: {{ credit.duration }} месяцев</p>
+    <p>Ежемесячный платеж: {{ credit.monthly_payment }}</p>
+    <p>Дата следующего платежа: {{ credit.next_payment_date }}</p>
+    
+    <a href="{% url 'get_credit' %}">Вернуться к оформлению кредита</a>
+</body>
+</html>
